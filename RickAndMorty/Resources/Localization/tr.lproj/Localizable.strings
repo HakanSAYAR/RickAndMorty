@@ -1,0 +1,39 @@
+// MARK: - Character List
+"character_list.title"               = "Rick & Morty";
+"character_list.gallery_section"     = "Galeri";
+"character_list.characters_section"  = "Karakterler";
+"character_list.error_alert_title"   = "Hata";
+"character_list.error_alert_button"  = "Tamam";
+"character_list.sort_newest_first"       = "En yeni önce";
+"character_list.sort_oldest_first"       = "En eski önce";
+"character_list.load_error_retry_button" = "Tekrar Dene";
+
+// MARK: - Character Detail
+"character_detail.row_status"        = "Durum";
+"character_detail.row_species"       = "Tür";
+"character_detail.row_gender"        = "Cinsiyet";
+"character_detail.row_origin"        = "Köken";
+"character_detail.row_location"      = "Konum";
+
+// MARK: - Photo Detail
+"photo_detail.save_success_title"    = "Kaydedildi";
+"photo_detail.save_success_message"  = "Fotoğraf galerine kaydedildi.";
+"photo_detail.already_saved_title"   = "Bilgilendirme";
+"photo_detail.already_saved_message" = "Bu karakter daha önce galerine kaydedildi.";
+"photo_detail.permission_title"      = "İzin Gerekli";
+"photo_detail.permission_message"    = "Fotoğraf kaydedebilmek için Ayarlar'dan fotoğraf kitaplığı erişimine izin verin.";
+"photo_detail.error_title"           = "Hata";
+"photo_detail.ok_button"             = "Tamam";
+"photo_detail.settings_button"       = "Ayarlar";
+
+// MARK: - Gallery
+"gallery.permission_denied"          = "Fotoğraf kitaplığına erişim izni verilmedi.";
+
+// MARK: - Loading Footer
+"loading_footer.retry_button"        = "Tekrar Dene";
+
+// MARK: - Errors
+"errors.no_internet_connection"      = "İnternet bağlantısı yok. Bağlantı ayarlarınızı kontrol edin.";
+"errors.request_timed_out"           = "İstek zaman aşımına uğradı. Lütfen tekrar deneyin.";
+"errors.network_error"               = "Ağ hatası oluştu. Lütfen tekrar deneyin.";
+"errors.generic"                     = "Bir şeyler ters gitti. Lütfen tekrar deneyin.";

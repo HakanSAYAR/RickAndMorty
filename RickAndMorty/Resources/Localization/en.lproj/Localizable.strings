@@ -1,0 +1,39 @@
+// MARK: - Character List
+"character_list.title"               = "Rick & Morty";
+"character_list.gallery_section"     = "Gallery";
+"character_list.characters_section"  = "Characters";
+"character_list.error_alert_title"   = "Error";
+"character_list.error_alert_button"  = "OK";
+"character_list.sort_newest_first"       = "Newest First";
+"character_list.sort_oldest_first"       = "Oldest First";
+"character_list.load_error_retry_button" = "Try Again";
+
+// MARK: - Character Detail
+"character_detail.row_status"        = "Status";
+"character_detail.row_species"       = "Species";
+"character_detail.row_gender"        = "Gender";
+"character_detail.row_origin"        = "Origin";
+"character_detail.row_location"      = "Location";
+
+// MARK: - Photo Detail
+"photo_detail.save_success_title"    = "Saved";
+"photo_detail.save_success_message"  = "Photo saved to your gallery.";
+"photo_detail.already_saved_title"   = "Information";
+"photo_detail.already_saved_message" = "This character has already been saved to your gallery.";
+"photo_detail.permission_title"      = "Permission Required";
+"photo_detail.permission_message"    = "Allow photo library access in Settings to save photos.";
+"photo_detail.error_title"           = "Error";
+"photo_detail.ok_button"             = "OK";
+"photo_detail.settings_button"       = "Settings";
+
+// MARK: - Gallery
+"gallery.permission_denied"          = "Photo library access was denied.";
+
+// MARK: - Loading Footer
+"loading_footer.retry_button"        = "Retry";
+
+// MARK: - Errors
+"errors.no_internet_connection"      = "No internet connection. Please check your connection settings.";
+"errors.request_timed_out"           = "The request timed out. Please try again.";
+"errors.network_error"               = "A network error occurred. Please try again.";
+"errors.generic"                     = "Something went wrong. Please try again.";
