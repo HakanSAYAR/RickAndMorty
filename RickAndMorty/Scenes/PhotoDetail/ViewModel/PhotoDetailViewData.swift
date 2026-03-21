@@ -9,9 +9,9 @@
 
 struct PhotoDetailViewData: Sendable {
     nonisolated let imageSource: PhotoImageSource
-    nonisolated let characterName: String
+    nonisolated let characterName: String?
 
-    nonisolated init(imageSource: PhotoImageSource, characterName: String) {
+    nonisolated init(imageSource: PhotoImageSource, characterName: String?) {
         self.imageSource = imageSource
         self.characterName = characterName
     }

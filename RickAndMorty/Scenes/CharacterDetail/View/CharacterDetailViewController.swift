@@ -22,10 +22,17 @@ final class CharacterDetailViewController: UIViewController {
     private let scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.translatesAutoresizingMaskIntoConstraints = false
+        sv.showsVerticalScrollIndicator = false
+        sv.showsHorizontalScrollIndicator = false
         return sv
     }()
 
-    private let contentStack = UIStackView(axis: .vertical)
+    private let contentStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
 
     private let headerImageView: CharacterDetailHeaderImageView = {
         let view = CharacterDetailHeaderImageView()
@@ -33,7 +40,12 @@ final class CharacterDetailViewController: UIViewController {
         return view
     }()
 
-    private let rowsStack = UIStackView(axis: .vertical)
+    private let rowsStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
 
     // MARK: - Init
 
@@ -61,37 +73,39 @@ final class CharacterDetailViewController: UIViewController {
         setupLayout()
         setupHeaderImageView()
     }
-    
+
     private func setupView() {
         view.backgroundColor = .systemBackground
     }
-    
+
     private func setupNavigationBar() {
         title = viewModel.navigationTitle
     }
-    
+
     private func setupLayout() {
         view.addSubview(scrollView)
-        scrollView.addSubview(contentStack)
-        contentStack.addArrangedSubview(headerImageView)
-        contentStack.addArrangedSubview(rowsStack)
+        scrollView.addSubview(contentStackView)
+
+        contentStackView.addArrangedSubview(headerImageView)
+        contentStackView.addArrangedSubview(rowsStackView)
 
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            contentStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentStack.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentStackView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            contentStackView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            contentStackView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            contentStackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+
+            contentStackView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
 
             headerImageView.heightAnchor.constraint(equalTo: view.widthAnchor)
         ])
     }
-    
+
     private func setupHeaderImageView() {
         headerImageView.onTap = { [weak self] in
             self?.viewModel.imageTapped()
@@ -116,15 +130,15 @@ final class CharacterDetailViewController: UIViewController {
 
         headerImageView.configure(imageURL: viewData.imageURL)
 
-        rowsStack.arrangedSubviews.forEach {
-            rowsStack.removeArrangedSubview($0)
+        rowsStackView.arrangedSubviews.forEach {
+            rowsStackView.removeArrangedSubview($0)
             $0.removeFromSuperview()
         }
 
         viewData.rows.forEach { row in
             let rowView = CharacterDetailInfoRowView()
             rowView.configure(with: row)
-            rowsStack.addArrangedSubview(rowView)
+            rowsStackView.addArrangedSubview(rowView)
         }
     }
 }

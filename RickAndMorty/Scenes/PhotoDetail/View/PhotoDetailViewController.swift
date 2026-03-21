@@ -57,6 +57,15 @@ final class PhotoDetailViewController: UIViewController {
     
     private func setupNavigationBar() {
         title = viewModel.navigationTitle
+
+        let closeButton = UIBarButtonItem(
+            image: UIImage(systemName: "xmark"),
+            style: .plain,
+            target: self,
+            action: #selector(closeButtonTapped)
+        )
+        navigationItem.leftBarButtonItem = closeButton
+
         guard viewModel.showDownloadButton else { return }
         let saveButton = UIBarButtonItem(
             image: Images.saveToPhotos,
@@ -102,6 +111,10 @@ final class PhotoDetailViewController: UIViewController {
     }
 
     // MARK: - Actions
+
+    @objc private func closeButtonTapped() {
+        viewModel.closeTapped()
+    }
 
     @objc private func saveButtonTapped() {
         // Capture UIImage on main thread, encode off-main to avoid blocking UI.

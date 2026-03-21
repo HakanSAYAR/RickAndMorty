@@ -93,8 +93,6 @@ final class CharacterListCoordinator: BaseCoordinator {
             let coordinator = PhotoDetailCoordinator(
                 navigationController: navigationController,
                 imageSource: .local(localIdentifier),
-                characterName: "",
-                characterId: nil,
                 showDownloadButton: false,
                 savePhotoUseCase: savePhotoUseCase
             )

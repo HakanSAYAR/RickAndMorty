@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3961C4502F6C871D00AC3231 /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3961C44F2F6C871D00AC3231 /* NetworkKit */; };
 		3961C4522F6C874500AC3231 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3961C4512F6C874500AC3231 /* Kingfisher */; };
+		39999E192F6D86C5007737AC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 39999E182F6D86C5007737AC /* FirebaseCrashlytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,7 @@
 		3961BEA52F6C70F100AC3231 /* Exceptions for "RickAndMorty" folder in "RickAndMorty" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Resources/Info.plist,
+				SupportingFiles/Info.plist,
 			);
 			target = 3961BE7C2F6C70F000AC3231 /* RickAndMorty */;
 		};
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39999E192F6D86C5007737AC /* FirebaseCrashlytics in Frameworks */,
 				3961C4522F6C874500AC3231 /* Kingfisher in Frameworks */,
 				3961C4502F6C871D00AC3231 /* NetworkKit in Frameworks */,
 			);
@@ -120,6 +122,7 @@
 			packageProductDependencies = (
 				3961C44F2F6C871D00AC3231 /* NetworkKit */,
 				3961C4512F6C874500AC3231 /* Kingfisher */,
+				39999E182F6D86C5007737AC /* FirebaseCrashlytics */,
 			);
 			productName = RickAndMorty;
 			productReference = 3961BE7D2F6C70F000AC3231 /* RickAndMorty.app */;
@@ -180,6 +183,7 @@
 			packageReferences = (
 				3961C44C2F6C861400AC3231 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				3961C44D2F6C869F00AC3231 /* XCLocalSwiftPackageReference "NetworkKit" */,
+				39999E172F6D86C5007737AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3961BE7E2F6C70F000AC3231 /* Products */;
@@ -244,7 +248,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2TLHC76E82;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RickAndMorty/Resources/Info.plist;
+				INFOPLIST_FILE = RickAndMorty/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick & Morty";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Karakter fotoğraflarını galerine kaydetmek için fotoğraf kitaplığına erişim gerekiyor.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Galeri fotoğraflarını göstermek için fotoğraf kitaplığına erişim gerekiyor.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -254,7 +261,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.rickandmorty.RickAndMorty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.rickandmortyapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -279,7 +286,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2TLHC76E82;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RickAndMorty/Resources/Info.plist;
+				INFOPLIST_FILE = RickAndMorty/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick & Morty";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Karakter fotoğraflarını galerine kaydetmek için fotoğraf kitaplığına erişim gerekiyor.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Galeri fotoğraflarını göstermek için fotoğraf kitaplığına erişim gerekiyor.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -289,7 +299,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.rickandmorty.RickAndMorty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.rickandmortyapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -358,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -416,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -433,7 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.rickandmorty.RickAndMortyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,7 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.rickandmorty.RickAndMortyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +526,14 @@
 				minimumVersion = 8.8.0;
 			};
 		};
+		39999E172F6D86C5007737AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -528,6 +546,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3961C44C2F6C861400AC3231 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		39999E182F6D86C5007737AC /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39999E172F6D86C5007737AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

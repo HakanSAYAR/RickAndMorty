@@ -9,6 +9,7 @@
 "character_list.load_error_retry_button" = "Tekrar Dene";
 
 // MARK: - Character Detail
+"character_detail.row_name"          = "İsim";
 "character_detail.row_status"        = "Durum";
 "character_detail.row_species"       = "Tür";
 "character_detail.row_gender"        = "Cinsiyet";

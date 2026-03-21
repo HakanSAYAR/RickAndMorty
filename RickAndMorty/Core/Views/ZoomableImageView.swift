@@ -33,7 +33,7 @@ final class ZoomableImageView: UIView {
 
     private let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
         iv.accessibilityIdentifier = "photo_detail_image"
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv

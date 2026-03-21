@@ -25,6 +25,7 @@ nonisolated enum L10n {
     // MARK: CharacterDetail
 
     nonisolated enum CharacterDetail {
+        static let rowName     = "character_detail.row_name".localized
         static let rowStatus   = "character_detail.row_status".localized
         static let rowSpecies  = "character_detail.row_species".localized
         static let rowGender   = "character_detail.row_gender".localized

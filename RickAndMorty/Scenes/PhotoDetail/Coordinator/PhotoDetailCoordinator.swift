@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 // MARK: - PhotoDetailCoordinator
 
@@ -14,18 +15,19 @@ final class PhotoDetailCoordinator: BaseCoordinator {
     // MARK: - Properties
 
     private let imageSource: PhotoImageSource
-    private let characterName: String
+    private let characterName: String?
     private let characterId: Int?
     private let showDownloadButton: Bool
     private let savePhotoUseCase: SaveImageToGalleryUseCaseProtocol
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Init
 
     init(
         navigationController: UINavigationController,
         imageSource: PhotoImageSource,
-        characterName: String,
-        characterId: Int?,
+        characterName: String? = nil,
+        characterId: Int? = nil,
         showDownloadButton: Bool,
         savePhotoUseCase: SaveImageToGalleryUseCaseProtocol
     ) {
@@ -48,6 +50,20 @@ final class PhotoDetailCoordinator: BaseCoordinator {
             savePhotoUseCase: savePhotoUseCase
         )
         rootViewController = scene.viewController
-        navigationController.pushViewController(scene.viewController, animated: true)
+
+        scene.viewModel.route
+            .sink { [weak self] route in
+                switch route {
+                case .dismiss:
+                    self?.navigationController.dismiss(animated: true) {
+                        self?.onFinish?()
+                    }
+                }
+            }
+            .store(in: &cancellables)
+
+        let presentedNav = UINavigationController(rootViewController: scene.viewController)
+        presentedNav.modalPresentationStyle = .fullScreen
+        navigationController.present(presentedNav, animated: true)
     }
 }

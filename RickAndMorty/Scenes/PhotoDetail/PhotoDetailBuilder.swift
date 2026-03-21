@@ -17,7 +17,7 @@ struct PhotoDetailScene {
 enum PhotoDetailBuilder {
     static func make(
         imageSource: PhotoImageSource,
-        characterName: String,
+        characterName: String? = nil,
         characterId: Int?,
         showDownloadButton: Bool,
         savePhotoUseCase: SaveImageToGalleryUseCaseProtocol

@@ -9,6 +9,7 @@
 "character_list.load_error_retry_button" = "Try Again";
 
 // MARK: - Character Detail
+"character_detail.row_name"          = "Name";
 "character_detail.row_status"        = "Status";
 "character_detail.row_species"       = "Species";
 "character_detail.row_gender"        = "Gender";
